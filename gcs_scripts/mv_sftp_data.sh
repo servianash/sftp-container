@@ -1,3 +1,3 @@
 #!/bin/bash
-rm -rf /home/$USERNAME/upload/.ssh
+source /etc/profile
 gsutil mv /home/$USERNAME/upload gs://$BUCKETNAME

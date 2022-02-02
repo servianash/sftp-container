@@ -1,9 +1,12 @@
 FROM atmoz/sftp
 # Install gcloudutil so we can mount GCS buckets
 # Ref: https://cloud.google.com/sdk/docs/install
+
+#DUMMY ENVIRONMENT VARIABLES, Should passed from -environment variable ie. docker -run -e USERNAME=test -e BUCKETNAME=test
 ENV USERNAME test
 ENV BUCKETNAME bucket
 ENV CRONTIME "* 1 * * *"
+
 RUN apt-get update
 RUN apt-get install -y curl gnupg wget lsb-release cron sudo
 RUN apt-get install -y apt-transport-https ca-certificates gnupg
